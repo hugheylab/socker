@@ -1,6 +1,7 @@
 FROM rocker/tidyverse:4.1.2
 
-LABEL org.opencontainers.image.authors="Jake Hughey <jakejhughey@gmail.com>"
+LABEL org.opencontainers.image.authors="Jake Hughey <jakejhughey@gmail.com>" \
+      org.opencontainers.image.source="https://github.com/hugheylab/socker"
 
 RUN apt-get update && \
   apt-get install -y \
