@@ -15,6 +15,7 @@ RUN apt-get update && \
 USER rstudio
 WORKDIR /home/rstudio
 COPY install_seeker.sh .
-RUN /home/rstudio/install_seeker.sh
+RUN ./install_seeker.sh
+ENV REFGENIE "/home/rstudio/genomes/genome_config.yaml"
 
 CMD /bin/bash

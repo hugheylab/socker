@@ -19,6 +19,7 @@ rm Miniconda3-latest-Linux-x86_64.sh
 ~/miniconda3/bin/conda init bash
 
 source ~/miniconda3/etc/profile.d/conda.sh
+conda config --set auto_activate_base false
 conda activate
 
 conda config --add channels defaults
