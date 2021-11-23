@@ -2,6 +2,7 @@
 set -e
 
 Rscript -e "if (!requireNamespace('BiocManager', quietly = TRUE)) install.packages('BiocManager')"
+Rscript -e "BiocManager::install('preprocessCore', configure.args = '--disable-threading')" # https://support.bioconductor.org/p/122925/
 Rscript -e "BiocManager::install('seeker', site_repository = 'https://hugheylab.github.io/drat/', update = FALSE, ask = FALSE)"
 Rscript -e "install.packages('doParallel')"
 rm -rf /tmp/downloaded_packages
