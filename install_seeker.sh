@@ -8,9 +8,9 @@ Rscript -e "install.packages('doParallel')"
 rm -rf /tmp/downloaded_packages
 
 # url and file name could change
-wget https://d3gcli72yxqn2z.cloudfront.net/connect_latest/v4/bin/ibm-aspera-connect_4.1.0.46-linux_x86_64.tar.gz
-tar -zxvf ibm-aspera-connect_4.1.0.46-linux_x86_64.tar.gz
-./ibm-aspera-connect_4.1.0.46-linux_x86_64.sh
+wget https://d3gcli72yxqn2z.cloudfront.net/connect_latest/v4/bin/ibm-aspera-connect_4.1.1.73_linux.tar.gz
+tar -zxvf ibm-aspera-connect_4.1.1.73_linux.tar.gz
+./ibm-aspera-connect_4.1.1.73_linux.sh
 rm ibm-aspera-connect*
 
 source ~/miniconda3/etc/profile.d/conda.sh
