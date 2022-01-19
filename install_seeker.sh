@@ -5,6 +5,8 @@ Rscript -e "if (!requireNamespace('BiocManager', quietly = TRUE)) install.packag
 Rscript -e "BiocManager::install('seeker', site_repository = 'https://hugheylab.github.io/drat/', update = FALSE, ask = FALSE)"
 Rscript -e "BiocManager::install('preprocessCore', configure.args = '--disable-threading', force = TRUE)" # https://support.bioconductor.org/p/122925/
 Rscript -e "install.packages('doParallel')"
+Rscript -e "library('seeker')" # force error if install failed
+Rscript -e "library('doParallel')"
 rm -rf /tmp/downloaded_packages
 
 # url and file name could change
