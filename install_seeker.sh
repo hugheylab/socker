@@ -9,9 +9,9 @@ echo 'export PATH="${PATH}:${HOME}/sratoolkit/bin"' >> ~/.profile
 echo 'Sys.setenv(PATH = paste(Sys.getenv("PATH"), path.expand("~/sratoolkit/bin"), sep = ":"))' >> ~/.Rprofile
 rm sratoolkit*.tar.gz
 
-mkdir -p ${HOME}/.ncbi
-printf '/LIBS/IMAGE_GUID = "%s"\n' `uuidgen` > ${HOME}/.ncbi/user-settings.mkfg
-printf '/libs/cloud/report_instance_identity = "true"\n' >> ${HOME}/.ncbi/user-settings.mkfg
+mkdir -p ~/.ncbi
+printf '/LIBS/IMAGE_GUID = "%s"\n' `uuidgen` > ~/.ncbi/user-settings.mkfg
+printf '/libs/cloud/report_instance_identity = "true"\n' >> ~/.ncbi/user-settings.mkfg
 
 source ~/miniconda3/etc/profile.d/conda.sh
 conda activate
