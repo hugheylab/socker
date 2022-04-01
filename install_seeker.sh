@@ -9,16 +9,17 @@ Rscript -e "library('seeker')" # force error if install failed
 Rscript -e "library('doParallel')"
 rm -rf /tmp/downloaded_packages
 
-# url and file name could change
-# wget https://d3gcli72yxqn2z.cloudfront.net/connect_latest/v4/bin/ibm-aspera-connect_4.1.1.73_linux.tar.gz
-# tar -zxvf ibm-aspera-connect_4.1.1.73_linux.tar.gz
-# ./ibm-aspera-connect_4.1.1.73_linux.sh
-# rm ibm-aspera-connect*
 wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/3.0.0/sratoolkit.3.0.0-ubuntu64.tar.gz
 tar -zxvf sratoolkit.3.0.0-ubuntu64.tar.gz
-echo 'export PATH="${PATH}:${HOME}/sratoolkit.3.0.0-ubuntu64/bin"' >> ~/.bashrc
-echo 'export PATH="${PATH}:${HOME}/sratoolkit.3.0.0-ubuntu64/bin"' >> ~/.profile
+mv sratoolkit.3.0.0-ubuntu64 sratoolkit
+echo 'export PATH="${PATH}:${HOME}/sratoolkit/bin"' >> ~/.bashrc
+echo 'export PATH="${PATH}:${HOME}/sratoolkit/bin"' >> ~/.profile
+echo 'Sys.setenv(PATH = paste(Sys.getenv("PATH"), path.expand("~/sratoolkit/bin"), sep = ":"))' >> ~/.Rprofile
 rm sratoolkit*.tar.gz
+
+mkdir -p ${HOME}/.ncbi
+printf '/LIBS/IMAGE_GUID = "%s"\n' `uuidgen` > ${HOME}/.ncbi/user-settings.mkfg
+printf '/libs/cloud/report_instance_identity = "true"\n' >> ${HOME}/.ncbi/user-settings.mkfg
 
 source ~/miniconda3/etc/profile.d/conda.sh
 conda activate
