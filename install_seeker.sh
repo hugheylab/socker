@@ -7,5 +7,5 @@ Rscript -e "BiocManager::install('preprocessCore', configure.args = '--disable-t
 Rscript -e "install.packages('doParallel')"
 Rscript -e "library('seeker')" # force error if install failed
 Rscript -e "library('doParallel')"
-Rscript -e "seeker::installSysDeps()"
+Rscript -e "seeker::installSysDeps(sraToolkitDir = '~', minicondaDir = '~', refgenieDir = '~/refgenie_genomes', rprofileDir = '~')"
 rm -rf /tmp/downloaded_packages
