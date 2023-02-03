@@ -8,4 +8,5 @@ Rscript -e "install.packages('doParallel')"
 Rscript -e "library('seeker')" # force error if install failed
 Rscript -e "library('doParallel')"
 Rscript -e "seeker::installSysDeps('~', '~', '~', '~')"
+
 rm -rf /tmp/downloaded_packages
